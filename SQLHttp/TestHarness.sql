@@ -29,11 +29,11 @@ CREATE FUNCTION [dbo].[translate_english_to_thislanguage] (@englishstring [nvarc
 RETURNS [nvarchar](MAX)
 AS
 BEGIN
- IF @verbose = 0 RETURN JSON_VALUE(dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to='+@thislanguage, '[{"Text":"'+ @englishstring + '"}]', 'e95fba12093d4e719cbeedadc9103509'),'$[0].translations[0].text');
- RETURN dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to='+@thislanguage, '[{"Text":"'+ @englishstring + '"}]', 'e95fba12093d4e719cbeedadc9103509')
+ IF @verbose = 0 RETURN JSON_VALUE(dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to='+@thislanguage, '[{"Text":"'+ @englishstring + '"}]', '<Cognitive Services API Key goes here>'),'$[0].translations[0].text');
+ RETURN dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to='+@thislanguage, '[{"Text":"'+ @englishstring + '"}]', '<Cognitive Services API Key goes here>')
 END;
 
 select dbo.http('http://icanhazip.com')
-select dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=fr', '[{"Text":"Hello, what is your name?"}]', 'e95fba12093d4e719cbeedadc9103509')
+select dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=fr', '[{"Text":"Hello, what is your name?"}]', '<Cognitive Services API Key goes here>')
 select dbo.translate_english_to_thislanguage('Would you like to have lunch with me?','fr',1) as col_translated
 
