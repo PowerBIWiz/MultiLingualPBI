@@ -23,6 +23,9 @@ DROP FUNCTION [dbo].[http]
 
 SELECT ROUTINE_NAME FROM information_schema.routines WHERE routine_type = 'function'
 
+-- Test everything with the following query
+select dbo.translate_english_to_thislanguage('This is a test sentence','Fr',DEFAULT) ProductCategoryName_UL
+
 */
 
 
