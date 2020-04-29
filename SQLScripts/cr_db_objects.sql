@@ -23,13 +23,6 @@ DROP FUNCTION [dbo].[http]
 
 SELECT ROUTINE_NAME FROM information_schema.routines WHERE routine_type = 'function'
 
-select dbo.http('http://icanhazip.com')
-
-select dbo.http('POST https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=fr" -H "Ocp-Apim-Subscription-Key: e95fba12093d4e719cbeedadc9103509" -H "Content-Type: application/json; charset=UTF-8" -d "[{''Text'':''Hello, what is your name?''}]')
-
-https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=fr" -H "Ocp-Apim-Subscription-Key: e95fba12093d4e719cbeedadc9103509" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]
-
-select dbo.posthttp('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=fr" -H "Ocp-Apim-Subscription-Key: e95fba12093d4e719cbeedadc9103509" -H "Content-Type: application/json; charset=UTF-8" -d "[{''Text'':''Hello, what is your name?''}]','')
 */
 
 
